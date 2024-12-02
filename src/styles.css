@@ -1,0 +1,191 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --background: #25273c;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    rgba(125, 21, 194, 0.512),
+    rgba(30, 30, 208, 0.381)
+  );
+}
+
+.App {
+  margin: auto;
+  margin-top: 100px;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 700px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.addTask {
+  text-align: center;
+  padding: 10px 20px 13px;
+  background-color: var(--background);
+  border-radius: 7px;
+}
+.addTask input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: white;
+  position: relative;
+  height: 35px;
+  font-size: 25px;
+}
+
+.addTask input::placeholder {
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 25px;
+}
+.tasks {
+  background-color: var(--background);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  gap: 30px;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.checked {
+  background: linear-gradient(
+    to right,
+    rgba(173, 85, 232, 0.512),
+    rgba(138, 235, 248, 0.381)
+  );
+}
+.checkText {
+  text-decoration: line-through;
+}
+li .close {
+  font-size: 30px !important;
+  transition: all 1s;
+}
+li .close:hover {
+  transform: rotate(-90deg);
+}
+li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-size: 25px;
+}
+li::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(122, 119, 119, 0.375);
+  bottom: -12px;
+}
+li .item {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+.item .check {
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  font-size: 20px;
+  padding: 5px 10px;
+  flex-wrap: wrap;
+}
+button {
+  border: none;
+  color: white;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+button:hover {
+  color: rgb(97, 177, 220);
+}
+.footer .btn {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 576px) {
+  .App {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .header h2 {
+    margin: auto !important;
+    margin-bottom: 20px;
+  }
+  .numItems,
+  .clearBtn {
+    order: -1;
+  }
+
+  .footer {
+    gap: 30px;
+  }
+  .footer .btn {
+    margin: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .numItems,
+  .clearBtn {
+    order: -1;
+    font-size: 16px !important;
+  }
+
+  .footer {
+    font-size: 16px !important;
+  }
+  .footer .btn {
+    margin: auto;
+  }
+  .footer .btn button {
+    font-size: 16px !important;
+  }
+}
